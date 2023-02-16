@@ -20,13 +20,13 @@ export const ViewPhoneModal = (props) => {
                 </Col>
                 <Col xs={6} md={6}>
                   <h4>Memory</h4>
-                  <p>{props.phone.memory}</p>
+                  <p>{props.phone.memory}GB</p>
                 </Col>
               </Row>
               <Row>
                 <Col xs={6} md={6}>
                   <h4>Camera</h4>
-                  <p>{props.phone.camera}</p>
+                  <p>{props.phone.camera}mpx</p>
                 </Col>
                 <Col xs={6} md={6}>
                   <h4>Color</h4>

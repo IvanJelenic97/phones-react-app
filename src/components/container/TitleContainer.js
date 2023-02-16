@@ -1,4 +1,6 @@
 import { Container, Card, Row, Col } from "react-bootstrap";
+import { observer } from "mobx-react-lite";
+import titleStore from "../../store/titleStore";
 
 const firstCard = {
   fontWeight: "bold",
@@ -11,17 +13,25 @@ const colStyle = {
   color: "#DDDDDD",
 };
 
-export const TitleContainer = () => {
+const TitleContainer = observer(() => {
+  const handleTitleClick = () => {
+    console.log("Title clicked");
+  };
+
   return (
     <Container className="flex mt-4 text-center mb-3 px-2 py-2">
       <Card className="text-center mb-3 px-2 py-2" style={firstCard}>
-        <Row className="mt-4 mb-4">
-          <Col style={colStyle}>Phone</Col>
-          <Col style={colStyle}>Year</Col>
-          <Col style={colStyle}>Color</Col>
-          <Col></Col>
-        </Row>
+        <Card onClick={handleTitleClick}>
+          <Row className="mt-4 mb-4">
+            <Col style={colStyle}>Title</Col>
+            <Col style={colStyle}>Year</Col>
+            <Col style={colStyle}>Color</Col>
+            <Col></Col>
+          </Row>
+        </Card>
       </Card>
     </Container>
   );
-};
+});
+
+export default TitleContainer;
